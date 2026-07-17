@@ -1,0 +1,42 @@
+# === IDE ===
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# === Maven / Java ===
+target/
+*.class
+*.jar
+*.war
+*.log
+
+# === Node ===
+node_modules/
+dist/
+.turbo/
+*.tsbuildinfo
+
+# === pnpm ===
+pnpm-lock.yaml
+
+# === OS ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Env ===
+.env.local
+.env.*.local
+
+# === Media (too large for Git, hosted separately) ===
+vibe-music-data/
+*.mp3
+*.wav
+*.flac
+
+# === Misc ===
+*.zip
+temp*/
+logs/
