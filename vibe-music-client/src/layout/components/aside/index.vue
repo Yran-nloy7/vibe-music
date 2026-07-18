@@ -46,7 +46,7 @@ watch(
           {{ item.title }}
         </h3>
         <div v-for="(item2, index2) in item.children" :key="index2"
-          class="mx-2 rounded-lg transition text-lg duration-300 py-2 px-2 flex items-center gap-2 text-primary-foreground cursor-pointer"
+          class="mx-2 rounded-lg transition text-sm duration-300 py-2 px-2 flex items-center gap-2 text-primary-foreground cursor-pointer"
           :class="{
             'bg-activeMenuBg': route.path === item2.router,
             'hover:bg-hoverMenuBg': route.path !== item2.router,
