@@ -4,89 +4,90 @@
 
 @layer base {
   :root {
-    --theme-bg-color: 0, 0%, 100%, 31%;
-    --dm-background:0, 0%, 100%, 91%;
+    /* 🏝️ Animal Island warm parchment tones */
+    --theme-bg-color: 46, 33%, 96%, 85%;
+    --dm-background: 46, 33%, 96%, 95%;
 
-    --background:0, 0%, 100%, 31%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 46, 33%, 96%, 85%;
+    --foreground: 32, 45%, 31%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 39, 40%, 92%;
+    --muted-foreground: 37, 17%, 60%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 46, 33%, 96%;
+    --popover-foreground: 32, 45%, 31%;
 
-    --card: rgb(146 151 179 / 13%);
-    --card-foreground: 222.2 84% 4.9%;
+    --card: rgb(247, 243, 223);
+    --card-foreground: 32, 45%, 31%;
 
-    --border: 0 0% 100% / 35%;;
-    --input: 214.3 31.8% 91.4%;
+    --border: 42, 15%, 65%;
+    --input: 37, 25%, 85%;
 
-    --inactive: 0 0% 20%;
+    --inactive: 37, 17%, 60%;
 
-    --heroui-default: 240 4.88% 83.92%;
-    --bg-content1:0 0% 100%;
+    --heroui-default: 42, 15%, 82%;
+    --bg-content1: 46, 33%, 96%;
 
-    --hover-menu-bg: 0, 0%, 80%, 35%;
-    --active-menu-bg: 211, 100%, 89%, 100%;
+    --hover-menu-bg: 42, 20%, 80%, 35%;
+    --active-menu-bg: 174, 75%, 90%, 100%;
 
     --primary: #19c8b9;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary-foreground: 0, 0%, 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 39, 40%, 92%;
+    --secondary-foreground: 32, 45%, 31%;
 
-    --accent: 0, 0%, 100%, 31%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 175, 78%, 90%;
+    --accent-foreground: 175, 78%, 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0, 65%, 62%;
+    --destructive-foreground: 0, 0%, 100%;
 
-    --ring: 222.2 84% 4.9%;
+    --ring: 42, 80%, 55%;
 
-    --radius: 0.5rem;
+    --radius: 18px;
   }
 
   .dark {
-    --theme-bg-color: 222, 25%, 8%, 40%;
-    --dm-background:222, 25%, 8%, 95%;
+    --theme-bg-color: 32, 30%, 12%, 80%;
+    --dm-background: 32, 30%, 12%, 95%;
 
-    --background: 222, 25%, 8%, 40%;
-    --foreground: 210 40% 98%;
+    --background: 32, 30%, 12%, 80%;
+    --foreground: 39, 60%, 88%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 32, 20%, 18%;
+    --muted-foreground: 37, 17%, 65%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 32, 30%, 12%;
+    --popover-foreground: 39, 60%, 88%;
 
-    --inactive: 227 12% 50% / 78%;
+    --card: rgb(50, 42, 30);
+    --card-foreground: 39, 60%, 88%;
 
-    --heroui-default: 240 5.26% 26.08%;
-    --bg-content1: 240 5.88% 10%;
+    --border: 42, 15%, 35%;
+    --input: 32, 20%, 20%;
 
-    --hover-menu-bg: 222, 36%, 80%, 30%;
-    --active-menu-bg: 222, 95%, 57%, 60%;
+    --inactive: 37, 17%, 45%;
 
-    --card: rgb(146 151 179 / 13%);
-    --card-foreground: 210 40% 98%;
+    --heroui-default: 32, 20%, 22%;
+    --bg-content1: 32, 30%, 10%;
 
-    --border: 227 12% 50% / 25%;
-    --input: 217.2 32.6% 17.5%;
+    --hover-menu-bg: 42, 20%, 30%, 40%;
+    --active-menu-bg: 174, 60%, 30%, 100%;
 
     --primary: #19c8b9;
-    --primary-foreground: 210 40% 98%;
+    --primary-foreground: 0, 0%, 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 32, 20%, 18%;
+    --secondary-foreground: 39, 60%, 88%;
 
-    --accent: 222, 25%, 8%, 40%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 175, 50%, 25%;
+    --accent-foreground: 175, 78%, 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0, 50%, 40%;
+    --destructive-foreground: 0, 0%, 100%;
 
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 42, 80%, 45%;
   }
 }
 
@@ -96,5 +97,6 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Nunito', 'Noto Sans SC', -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   }
 }
