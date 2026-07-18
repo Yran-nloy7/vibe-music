@@ -40,3 +40,8 @@ vibe-music-data/
 *.zip
 temp*/
 logs/
+
+# Docker volumes
+data/
+mysql-data/
+redis-data/

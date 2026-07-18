@@ -7,7 +7,7 @@ WORKDIR /build
 RUN corepack enable && corepack prepare pnpm@latest --activate
 RUN npm config set registry https://registry.npmmirror.com
 
-COPY package.json .npmrc ./
+COPY package.json ./
 RUN pnpm install --no-frozen-lockfile
 
 COPY . .

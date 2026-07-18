@@ -1,0 +1,130 @@
+version: "3.8"
+
+services:
+  # ============================================
+  # MySQL 8.0 — 数据库
+  # ============================================
+  mysql:
+    image: mysql:8.0
+    container_name: vibe-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+      MYSQL_DATABASE: vibe_music
+      MYSQL_CHARSET: utf8mb4
+      MYSQL_COLLATION: utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./vibe-music-server/sql/vibe_music.sql:/docker-entrypoint-initdb.d/01-init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p123456"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - vibe-net
+
+  # ============================================
+  # Redis 7 — 缓存
+  # ============================================
+  redis:
+    image: redis:7-alpine
+    container_name: vibe-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks:
+      - vibe-net
+
+  # ============================================
+  # Nginx 文件服务器 — 替代 MinIO (媒体资源)
+  # ============================================
+  files:
+    image: nginx:alpine
+    container_name: vibe-files
+    restart: unless-stopped
+    ports:
+      - "9000:80"
+    volumes:
+      - ./vibe-music-data:/usr/share/nginx/html/vibe-music-data:ro
+      - ./nginx-files.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - vibe-net
+
+  # ============================================
+  # Spring Boot 后端
+  # ============================================
+  server:
+    build:
+      context: ./vibe-music-server
+      dockerfile: Dockerfile
+    container_name: vibe-server
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/vibe_music?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: "123456"
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      MINIO_ENDPOINT: http://files:80
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+      MINIO_BUCKET: vibe-music-data
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - vibe-net
+
+  # ============================================
+  # Vue 3 管理端 (Nginx + 构建产物)
+  # ============================================
+  admin:
+    build:
+      context: ./vibe-music-admin
+      dockerfile: Dockerfile
+    container_name: vibe-admin
+    restart: unless-stopped
+    ports:
+      - "8089:80"
+    depends_on:
+      - server
+    networks:
+      - vibe-net
+
+  # ============================================
+  # Vue 3 音乐客户端 (Nginx + 构建产物)
+  # ============================================
+  client:
+    build:
+      context: ./vibe-music-client
+      dockerfile: Dockerfile
+    container_name: vibe-client
+    restart: unless-stopped
+    ports:
+      - "8090:80"
+    depends_on:
+      - server
+    networks:
+      - vibe-net
+
+volumes:
+  mysql-data:
+  redis-data:
+
+networks:
+  vibe-net:
+    driver: bridge

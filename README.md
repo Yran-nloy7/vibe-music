@@ -311,7 +311,44 @@ tb_song ──┬── tb_genre ── tb_style (歌曲风格多对多)
 
 ---
 
-## 🚀 本地运行指南
+## 🐳 Docker 一键部署（推荐）
+
+```bash
+# 1. 安装 Docker Desktop
+#    https://www.docker.com/products/docker-desktop
+
+# 2. 确保 vibe-music-data 媒体文件在项目根目录
+#    e:\vibe-music\vibe-music-data\  (3.7GB，百度网盘下载)
+
+# 3. 一键启动全部 6 个服务
+cd e:\vibe-music
+docker compose up -d
+
+# 4. 等待启动完成（首次需要 5-10 分钟构建）
+docker compose logs -f server  # 查看后端日志
+```
+
+启动后访问：
+
+| 服务 | 地址 | 账号 |
+|------|------|------|
+| 🎵 音乐客户端 | http://localhost:8090 | 注册即用 |
+| 📊 管理后台 | http://localhost:8089 | `admin_1` / `123456abc` |
+| 📁 文件服务 | http://localhost:9000 | 媒体资源 |
+
+常用命令：
+
+```bash
+docker compose up -d          # 启动
+docker compose down           # 停止
+docker compose logs -f        # 查看所有日志
+docker compose restart server # 重启后端
+docker compose build --no-cache  # 强制重新构建
+```
+
+---
+
+## 🚀 本地运行指南（手动）
 
 ### 环境要求
 
