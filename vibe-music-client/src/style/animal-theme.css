@@ -1,0 +1,315 @@
+/* ============================================
+   🏝️ Animal Island Theme for Vibe Music
+   Design tokens from animal-island-vue v0.2.0
+   Inspired by Animal Crossing: New Horizons
+   ============================================ */
+
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+/* ===== CSS Custom Properties ===== */
+:root {
+  /* --- Primary (Mint Teal) --- */
+  --animal-primary:        #19c8b9;
+  --animal-primary-hover:  #3dd4c6;
+  --animal-primary-active: #50b9ab;
+  --animal-primary-bg:     #e6f9f6;
+
+  /* --- Semantic Colors --- */
+  --animal-success:        #6fba2c;
+  --animal-success-hover:  #85cc45;
+  --animal-success-active: #5a9e1e;
+
+  --animal-warning:        #f5c31c;
+  --animal-warning-hover:  #f7d04a;
+  --animal-warning-active: #dba90e;
+
+  --animal-error:          #e05a5a;
+  --animal-error-hover:    #e87878;
+  --animal-error-active:   #c94444;
+
+  /* --- Text --- */
+  --animal-text:           #794f27;
+  --animal-text-secondary: #9f927d;
+  --animal-text-disabled:  #c4b89e;
+  --animal-text-body:      #725d42;
+  --animal-text-muted:     #8a7b66;
+
+  /* --- Backgrounds --- */
+  --animal-bg:             #f8f8f0;   /* warm parchment */
+  --animal-bg-secondary:   #f0e8d8;   /* warm beige */
+  --animal-bg-content:     rgb(247, 243, 223); /* card/modal surface */
+  --animal-bg-disabled:    #f0ece2;
+
+  /* --- Borders --- */
+  --animal-border:         #aaa69d;
+  --animal-border-hover:   #827157;
+  --animal-border-light:   #e8e2d6;
+  --animal-border-input:   #c4b89e;
+  --animal-border-width:   2px;
+
+  /* --- Shadows (warm brown tint, never black) --- */
+  --animal-shadow-sm:      0 2px 4px 0 rgba(61, 52, 40, 0.06);
+  --animal-shadow-base:    0 3px 10px 0 rgba(61, 52, 40, 0.10);
+  --animal-shadow-lg:      0 8px 24px 0 rgba(61, 52, 40, 0.14);
+
+  /* --- 3D Pixel-Stack Shadow (Nintendo style) --- */
+  --animal-shadow-3d:      0 5px 0 0 #bdaea0;
+  --animal-shadow-3d-hover: 0 6px 0 0 #bdaea0;
+  --animal-shadow-3d-active: 0 1px 0 0 #bdaea0;
+
+  /* --- Border Radius (extra round, playful) --- */
+  --animal-radius-sm:      16px;
+  --animal-radius-base:    18px;
+  --animal-radius-lg:      24px;
+  --animal-radius-pill:    50px;
+  --animal-radius-full:    999px;
+
+  /* --- Fonts --- */
+  --animal-font:           'Nunito', 'Noto Sans SC', -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --animal-font-mono:      'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+
+  /* --- Font Sizes --- */
+  --animal-font-sm:        12px;
+  --animal-font-base:      14px;
+  --animal-font-lg:        16px;
+  --animal-font-xl:        20px;
+  --animal-font-2xl:       28px;
+
+  /* --- Spacing --- */
+  --animal-spacing-xs:     4px;
+  --animal-spacing-sm:     8px;
+  --animal-spacing-md:     12px;
+  --animal-spacing-lg:     16px;
+  --animal-spacing-xl:     24px;
+
+  /* --- Component Heights --- */
+  --animal-height-sm:      32px;
+  --animal-height-base:    40px;
+  --animal-height-lg:      48px;
+
+  /* --- Motion --- */
+  --animal-motion-fast:    0.15s;
+  --animal-motion-base:    0.25s;
+  --animal-motion-slow:    0.35s;
+  --animal-motion-ease:    cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- Focus Rings (warm yellow, never cold blue) --- */
+  --animal-focus-color:    #f5c31c;
+  --animal-focus-ring:     0 0 0 3px rgba(245, 195, 28, 0.15);
+
+  /* --- NookPhone 13-Color Palette --- */
+  --animal-app-pink:       #f8a6b2;
+  --animal-purple:         #b77dee;
+  --animal-app-blue:       #889df0;
+  --animal-app-yellow:     #f7cd67;
+  --animal-app-orange:     #e59266;
+  --animal-app-teal:       #82d5bb;
+  --animal-app-green:      #8ac68a;
+  --animal-app-red:        #fc736d;
+  --animal-lime-green:     #d1da49;
+  --animal-yellow-green:   #ecdf52;
+  --animal-brown:          #9a835a;
+  --animal-warm-peach:     #e18c6f;
+
+  /* --- Gradients --- */
+  --animal-gradient-warm:  linear-gradient(180deg, #fff 0%, #f8f8f0 100%);
+  --animal-gradient-stripe: repeating-linear-gradient(-45deg, #0ec4b6, #0ec4b6 10px, #01b0a7 10px, #01b0a7 20px);
+
+  /* --- Letter Spacing --- */
+  --animal-tracking-button:  0.02em;
+  --animal-tracking-title:   0.04em;
+  --animal-tracking-base:    0.01em;
+}
+
+/* ===== Override Tailwind CSS Variables ===== */
+:root {
+  /* Map animal tokens → existing Tailwind vars */
+  --primary:             var(--animal-primary);
+  --primary-foreground:  0 0% 100%;
+  --theme-bg-color:      var(--animal-bg);
+
+  --background:          46 33% 96%;      /* ~#f8f8f0 */
+  --foreground:          32 45% 31%;       /* ~#794f27 */
+
+  --muted:               39 40% 92%;       /* ~#f0e8d8 */
+  --muted-foreground:    37 17% 60%;       /* ~#9f927d */
+
+  --popover:             46 33% 96%;       /* ~#f8f8f0 */
+  --popover-foreground:  32 45% 31%;       /* ~#794f27 */
+
+  --card:                rgb(247, 243, 223);
+  --card-foreground:     32 45% 31%;
+
+  --border:              42 15% 65%;       /* ~#aaa69d */
+  --input:               37 25% 85%;       /* ~#e8e2d6 */
+
+  --inactive:            37 17% 60%;       /* ~#9f927d */
+  --heroui-default:      42 15% 82%;       /* ~#aaa69d */
+  --bg-content1:         46 33% 96%;       /* ~#f8f8f0 */
+
+  --hover-menu-bg:       42 20% 80% / 35%;
+  --active-menu-bg:      174 75% 90% / 100%;
+
+  --secondary:           39 40% 92%;
+  --secondary-foreground: 32 45% 31%;
+
+  --accent:              175 78% 44%;      /* ~#19c8b9 */
+  --accent-foreground:   0 0% 100%;
+
+  --destructive:         0 65% 62%;        /* ~#e05a5a */
+  --destructive-foreground: 0 0% 100%;
+
+  --ring:                42 80% 55%;       /* ~#f5c31c */
+
+  --radius:              18px;             /* was 0.5rem */
+
+  /* Font override */
+  font-family: var(--animal-font);
+}
+
+/* ===== Override Element Plus Theme ===== */
+:root {
+  --el-color-primary:           var(--animal-primary);
+  --el-color-primary-light-3:   var(--animal-primary-hover);
+  --el-color-primary-light-5:   #6aded4;
+  --el-color-primary-light-7:   #a3ece4;
+  --el-color-primary-light-8:   #c2f2ed;
+  --el-color-primary-light-9:   var(--animal-primary-bg);
+  --el-color-primary-dark-2:    var(--animal-primary-active);
+
+  --el-color-success:           var(--animal-success);
+  --el-color-warning:           var(--animal-warning);
+  --el-color-danger:            var(--animal-error);
+
+  --el-text-color-primary:      var(--animal-text);
+  --el-text-color-regular:      var(--animal-text-body);
+  --el-text-color-secondary:    var(--animal-text-secondary);
+  --el-text-color-placeholder:  var(--animal-text-disabled);
+  --el-text-color-disabled:     var(--animal-text-disabled);
+
+  --el-border-color:            var(--animal-border-input);
+  --el-border-color-light:      var(--animal-border-light);
+  --el-border-color-lighter:    var(--animal-border-light);
+  --el-border-color-extra-light: #f0ece2;
+  --el-border-color-hover:      var(--animal-border-hover);
+
+  --el-bg-color:                var(--animal-bg);
+  --el-bg-color-overlay:        var(--animal-bg-content);
+  --el-fill-color:              var(--animal-bg-secondary);
+  --el-fill-color-light:        var(--animal-bg);
+  --el-fill-color-lighter:      #f5f2ea;
+  --el-fill-color-blank:        #ffffff;
+
+  --el-border-radius-base:      var(--animal-radius-base);
+  --el-border-radius-small:     var(--animal-radius-sm);
+  --el-border-radius-round:     var(--animal-radius-pill);
+
+  --el-box-shadow-light:        var(--animal-shadow-sm);
+  --el-box-shadow:              var(--animal-shadow-base);
+  --el-box-shadow-dark:         var(--animal-shadow-lg);
+
+  --el-font-family:             var(--animal-font);
+}
+
+/* ===== Dark Mode Overrides ===== */
+.dark {
+  --primary:                var(--animal-primary);
+  --theme-bg-color:         32 30% 12%;
+
+  --background:             32 30% 12%;
+  --foreground:             39 60% 88%;
+
+  --muted:                  32 20% 18%;
+  --muted-foreground:       37 17% 65%;
+
+  --popover:                32 30% 12%;
+  --popover-foreground:     39 60% 88%;
+
+  --card:                   rgb(50 42 30 / 50%);
+  --card-foreground:        39 60% 88%;
+
+  --border:                 42 15% 35%;
+  --input:                  32 20% 20%;
+
+  --secondary:              32 20% 18%;
+  --secondary-foreground:   39 60% 88%;
+
+  --accent:                 175 78% 44%;
+  --accent-foreground:      0 0% 100%;
+
+  --destructive:            0 50% 40%;
+
+  --ring:                   42 80% 45%;
+
+  --el-bg-color:            #2b2218;
+  --el-bg-color-overlay:    #3a3028;
+  --el-fill-color:          #3d3028;
+  --el-fill-color-light:    #2b2218;
+  --el-fill-color-lighter:  #4a3d32;
+}
+
+/* ===== Global Overrides ===== */
+body {
+  font-family: var(--animal-font);
+  background-color: var(--animal-bg);
+  color: var(--animal-text);
+  letter-spacing: var(--animal-tracking-base);
+}
+
+/* Make all interactive elements rounded */
+button,
+input,
+select,
+textarea {
+  font-family: var(--animal-font);
+  border-radius: var(--animal-radius-base) !important;
+}
+
+/* Hover lift effect on cards */
+.animal-card-hover {
+  transition: transform var(--animal-motion-base) var(--animal-motion-ease);
+}
+.animal-card-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* 3D button style (Nintendo style) */
+.animal-btn-3d {
+  box-shadow: var(--animal-shadow-3d);
+  transition: all var(--animal-motion-fast) var(--animal-motion-ease);
+  border: none;
+  border-radius: var(--animal-radius-pill);
+  font-weight: 600;
+  letter-spacing: var(--animal-tracking-button);
+}
+.animal-btn-3d:hover {
+  box-shadow: var(--animal-shadow-3d-hover);
+  transform: translateY(-1px);
+}
+.animal-btn-3d:active {
+  box-shadow: var(--animal-shadow-3d-active);
+  transform: translateY(2px);
+}
+
+/* Striped progress/like */
+.animal-stripe-bg {
+  background-image: var(--animal-gradient-stripe);
+  background-size: 28.28px 28.28px;
+}
+
+/* Custom scrollbar - warm tones */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--animal-bg-secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--animal-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--animal-border-hover);
+}

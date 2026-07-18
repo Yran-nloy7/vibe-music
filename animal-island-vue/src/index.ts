@@ -1,0 +1,158 @@
+// 全局样式 (Less + CSS Custom Properties)
+import './styles/index.less';
+
+// Nunito（latin subset only）
+import '@fontsource/nunito/latin-500.css';
+import '@fontsource/nunito/latin-700.css';
+import '@fontsource/nunito/latin-900.css';
+
+// Noto Sans SC
+import '@fontsource/noto-sans-sc/latin-400.css';
+import '@fontsource/noto-sans-sc/latin-500.css';
+import '@fontsource/noto-sans-sc/latin-700.css';
+import '@fontsource/noto-sans-sc/chinese-simplified-400.css';
+import '@fontsource/noto-sans-sc/chinese-simplified-500.css';
+import '@fontsource/noto-sans-sc/chinese-simplified-700.css';
+
+// ============================================
+// 组件导出（随迁移进度逐步追加）
+// ============================================
+// Phase 1 — 基础原子组件
+export { Icon, ICON_LIST } from './components/Icon';
+export type { IconProps, IconName } from './components/Icon';
+
+export { Button } from './components/Button';
+export type { ButtonProps, ButtonType, ButtonSize, ButtonHTMLType } from './components/Button';
+
+export { Divider } from './components/Divider';
+export type { DividerProps, DividerType } from './components/Divider';
+
+export { Cursor } from './components/Cursor';
+export type { CursorProps } from './components/Cursor';
+
+export { Loading } from './components/Loading';
+export type { LoadingProps } from './components/Loading';
+
+export { Title } from './components/Title';
+export type { TitleProps, TitleSize, TitleColor } from './components/Title';
+
+// Phase 2 — 表单组件
+export { Input } from './components/Input';
+export type { InputProps, InputSize } from './components/Input';
+
+export { Switch } from './components/Switch';
+export type { SwitchProps, SwitchSize } from './components/Switch';
+
+export { Checkbox } from './components/Checkbox';
+export type {
+    CheckboxProps,
+    CheckboxOption,
+    CheckboxSize,
+    CheckboxValue,
+} from './components/Checkbox';
+
+export { Radio } from './components/Radio';
+export type {
+    RadioProps,
+    RadioOption,
+    RadioSize,
+    RadioValue,
+} from './components/Radio';
+
+export { Tooltip } from './components/Tooltip';
+export type {
+    TooltipProps,
+    TooltipPlacement,
+    TooltipTrigger,
+    TooltipVariant,
+} from './components/Tooltip';
+
+export { Select } from './components/Select';
+export type { SelectProps, SelectOption } from './components/Select';
+
+export { Tabs } from './components/Tabs';
+export type { TabsProps, TabItem } from './components/Tabs';
+
+export { Form, FormItem, FormProvider, useForm } from './components/Form';
+export type {
+    ColProps,
+    FieldData,
+    FormContextValue,
+    FormInstance,
+    FormItemLayout,
+    FormItemProps,
+    FormLabelAlign,
+    FormLayout,
+    FormProps,
+    FormProviderProps,
+    FormSize,
+    NamePath,
+    RequiredMark,
+    RuleObject,
+    RuleRender,
+    RuleType,
+    Rules,
+    ScrollOptions,
+    StoreValue,
+    ValidateError,
+    ValidateInfo,
+    ValidateStatus,
+} from './components/Form';
+
+// Phase 3 — 容器/反馈组件
+export { Card } from './components/Card';
+export type { CardProps, CardType, CardColor } from './components/Card';
+
+export { Collapse } from './components/Collapse';
+export type { CollapseProps } from './components/Collapse';
+
+export { Modal } from './components/Modal';
+export type { ModalProps } from './components/Modal';
+
+export { Footer } from './components/Footer';
+export type { FooterProps, FooterType } from './components/Footer';
+
+// Phase 4 — 内容/数据展示组件
+export { Time } from './components/Time';
+export type { TimeProps } from './components/Time';
+
+export { Typewriter } from './components/Typewriter';
+export type { TypewriterProps } from './components/Typewriter';
+
+export { CodeBlock } from './components/CodeBlock';
+export type { CodeBlockProps } from './components/CodeBlock';
+
+export { Table } from './components/Table';
+export type { TableProps, TableColumn, TableRecord } from './components/Table';
+
+export { Phone } from './components/Phone';
+export type { PhoneProps } from './components/Phone';
+
+// Phase 5 — 补全组件
+export { Tag } from './components/Tag';
+export type { TagProps, TagSize, TagVariant, TagColor } from './components/Tag';
+
+export { Progress } from './components/Progress';
+export type { ProgressProps, ProgressSize, ProgressInfoPosition } from './components/Progress';
+
+export { Drawer } from './components/Drawer';
+export type { DrawerProps, DrawerPlacement } from './components/Drawer';
+
+export { Notification, NotificationContainer } from './components/Notification';
+export type {
+    NotificationConfig,
+    NotificationItem,
+    NotificationPosition,
+    NotificationPlacement,
+    NotificationStatic,
+    NotificationType,
+} from './components/Notification';
+
+export { Wallet } from './components/Wallet';
+export type { WalletProps, WalletSize } from './components/Wallet';
+
+// 注：WeddingInvitation 是「Demo-only」演示组件 —— 仅用于站点展示，
+// 不打入对外发布的 npm 包。源码已迁移到 `demo/components/WeddingInvitation/`。
+// 用户可参考 demo 实现自行接入项目。
+
+// ...（后续阶段陆续启用）
