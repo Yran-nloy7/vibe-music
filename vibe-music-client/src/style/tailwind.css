@@ -9,21 +9,21 @@
     --dm-background: 46, 33%, 96%, 95%;
 
     --background: 46, 33%, 96%, 85%;
-    --foreground: 32, 45%, 31%;
+    --foreground: 30, 35%, 18%;
 
-    --muted: 39, 40%, 92%;
-    --muted-foreground: 37, 17%, 60%;
+    --muted: 39, 35%, 88%;
+    --muted-foreground: 30, 18%, 38%;
 
     --popover: 46, 33%, 96%;
-    --popover-foreground: 32, 45%, 31%;
+    --popover-foreground: 30, 35%, 18%;
 
     --card: rgb(247, 243, 223);
-    --card-foreground: 32, 45%, 31%;
+    --card-foreground: 30, 35%, 18%;
 
     --border: 42, 15%, 65%;
     --input: 37, 25%, 85%;
 
-    --inactive: 37, 17%, 60%;
+    --inactive: 30, 14%, 48%;
 
     --heroui-default: 42, 15%, 82%;
     --bg-content1: 46, 33%, 96%;
@@ -34,11 +34,11 @@
     --primary: #19c8b9;
     --primary-foreground: 0, 0%, 100%;
 
-    --secondary: 39, 40%, 92%;
-    --secondary-foreground: 32, 45%, 31%;
+    --secondary: 39, 35%, 88%;
+    --secondary-foreground: 30, 35%, 18%;
 
     --accent: 175, 78%, 90%;
-    --accent-foreground: 175, 78%, 15%;
+    --accent-foreground: 175, 70%, 12%;
 
     --destructive: 0, 65%, 62%;
     --destructive-foreground: 0, 0%, 100%;
@@ -53,21 +53,21 @@
     --dm-background: 32, 30%, 12%, 95%;
 
     --background: 32, 30%, 12%, 80%;
-    --foreground: 39, 60%, 88%;
+    --foreground: 39, 55%, 88%;
 
-    --muted: 32, 20%, 18%;
-    --muted-foreground: 37, 17%, 65%;
+    --muted: 32, 18%, 16%;
+    --muted-foreground: 37, 20%, 58%;
 
-    --popover: 32, 30%, 12%;
-    --popover-foreground: 39, 60%, 88%;
+    --popover: 32, 25%, 14%;
+    --popover-foreground: 39, 55%, 88%;
 
     --card: rgb(50, 42, 30);
-    --card-foreground: 39, 60%, 88%;
+    --card-foreground: 39, 55%, 88%;
 
-    --border: 42, 15%, 35%;
-    --input: 32, 20%, 20%;
+    --border: 42, 12%, 32%;
+    --input: 32, 18%, 18%;
 
-    --inactive: 37, 17%, 45%;
+    --inactive: 37, 15%, 42%;
 
     --heroui-default: 32, 20%, 22%;
     --bg-content1: 32, 30%, 10%;
@@ -78,11 +78,11 @@
     --primary: #19c8b9;
     --primary-foreground: 0, 0%, 100%;
 
-    --secondary: 32, 20%, 18%;
-    --secondary-foreground: 39, 60%, 88%;
+    --secondary: 32, 18%, 16%;
+    --secondary-foreground: 39, 55%, 88%;
 
     --accent: 175, 50%, 25%;
-    --accent-foreground: 175, 78%, 85%;
+    --accent-foreground: 175, 70%, 80%;
 
     --destructive: 0, 50%, 40%;
     --destructive-foreground: 0, 0%, 100%;
