@@ -77,6 +77,6 @@ watch(
 
 <style scoped>
 .search-bg {
-  background-color: #e3e3e3;
+  background-color: var(--animal-bg-secondary, #f0e8d8);
 }
 </style>

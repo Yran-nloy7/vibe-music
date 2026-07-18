@@ -4,7 +4,7 @@ import Center from './components/center.vue'
 import Right from './components/right.vue'
 </script>
 <template>
-  <footer class="border-t flex items-center justify-between shadow-2xl shadow-black">
+  <footer class="border-t flex items-center justify-between shadow-2xl" style="--tw-shadow-color: rgba(61,52,40,0.15);">
     <!-- 左边：歌曲封面和歌曲名称 -->
     <Left />
     <!-- 中间：控制区 -->

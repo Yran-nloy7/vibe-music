@@ -41,7 +41,7 @@ const handleClearAll = () => {
           <div v-for="(item, index) in audio.trackList" :key="index" @click="playMusic(item)"
             @mouseover="mouseOverIndex = index" @mouseleave="mouseOverIndex = -1"
             class="flex items-center gap-2 p-2 my-1 rounded-lg transition group cursor-pointer"
-            :class="`hover:bg-gray-300 ${audio.currentSongIndex == index ? 'bg-gray-300 dark:bg-[#414243]' : ''} dark:hover:bg-[#414243] `">
+            :class="`hover:bg-gray-200 ${audio.currentSongIndex == index ? 'bg-gray-200 dark:bg-[#3d3028]' : ''} dark:hover:bg-[#3d3028] `">
             <div class="w-10 h-auto rounded-lg overflow-hidden relative">
               <img :src="item.cover" alt="" />
               <!-- Play 按钮，使用 group-hover 控制透明度 -->
