@@ -292,6 +292,18 @@ textarea {
   transform: translateY(2px);
 }
 
+/* ===== Element Plus Tooltip & Popover ===== */
+.el-tooltip__popper,
+.el-popover {
+  font-size: 12px !important;
+  font-family: var(--animal-font) !important;
+  border-radius: var(--animal-radius-sm) !important;
+  background-color: var(--animal-bg-content) !important;
+  color: var(--animal-text) !important;
+  border: 2px solid var(--animal-border) !important;
+  box-shadow: var(--animal-shadow-base) !important;
+}
+
 /* Striped progress/like */
 .animal-stripe-bg {
   background-image: var(--animal-gradient-stripe);
