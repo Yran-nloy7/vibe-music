@@ -198,7 +198,7 @@ onMounted(() => {
                   </div>
                   <div
                     class="absolute bottom-0 left-0 right-0 px-4 py-3 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10">
-                    <h2 class="mb-1 text-xl font-semibold">{{ artist.name }}</h2>
+                    <h2 class="mb-1 text-sm font-semibold">{{ artist.name }}</h2>
                     <p class="mb-2 text-sm" v-if="artist.alias && artist.alias.length > 0">
                       {{ artist.alias.join() }}
                     </p>
