@@ -21,6 +21,19 @@ module.exports = {
     },
     extend: {
       colors: {
+        // Animal Island warm gray palette (replaces Tailwind gray)
+        gray: {
+          50: '#f8f8f0',
+          100: '#f0ece2',
+          200: '#e8e2d6',
+          300: '#d4c9b4',
+          400: '#c4b89e',
+          500: '#aaa69d',
+          600: '#9f927d',
+          700: '#827157',
+          800: '#794f27',
+          900: '#5a3a1a',
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

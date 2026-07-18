@@ -185,7 +185,7 @@ function switchToLogin() {
 }
 
 .login-text a {
-  color: #2a68fa;
+  color: #19c8b9;
   font-weight: 600;
   text-decoration: none;
 }

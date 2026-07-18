@@ -26,16 +26,16 @@
 </template>
 <style lang="scss">
 :root {
-  --color-bg1: #b2ccff;
-  --color-bg2: #0c4ada;
-  --color1: 18, 113, 255;
-  --color2: 221, 74, 255;
-  --color3: 100, 220, 255;
-  --color4: 200, 50, 50;
-  --color5: 180, 180, 50;
-  --color-interactive: 140, 100, 255;
+  --color-bg1: #c2ece6;
+  --color-bg2: #19c8b9;
+  --color1: 25, 200, 185;
+  --color2: 247, 205, 103;
+  --color3: 130, 213, 187;
+  --color4: 248, 166, 178;
+  --color5: 136, 157, 240;
+  --color-interactive: 245, 195, 28;
   --circle-size: 80%;
-  --blending: hard-light;
+  --blending: soft-light;
 }
 
 @keyframes moveInCircle {
