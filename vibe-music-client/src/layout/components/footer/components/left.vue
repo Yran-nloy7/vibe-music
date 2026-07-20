@@ -9,31 +9,19 @@ const showDrawerMusic = ref(false)
 
 <template>
   <div
-    class="flex items-center gap-2 w-64 cursor-pointer select-none hover:bg-hoverMenuBg transition-all duration-300 rounded-lg p-1 group"
-    :class="{ 'scale-105 shadow-lg': showDrawerMusic }"
+    class="flex items-center gap-2 w-64 cursor-pointer select-none hover:bg-hoverMenuBg transition-colors rounded-lg p-1"
     @click="showDrawerMusic = !showDrawerMusic"
   >
-    <div class="min-w-12 max-w-12 h-full relative">
+    <div class="min-w-12 max-w-12 h-full">
       <img
         :src="currentTrack.cover + '?param=90y90'"
         :alt="currentTrack.title"
-        class="w-full h-full object-cover rounded-lg m-1 transition-transform duration-500"
-        :class="{ 'rotate-180 scale-110': showDrawerMusic }"
+        class="w-full h-full object-cover rounded-lg m-1"
       />
-      <div
-        class="absolute inset-0 flex items-center justify-center transition-all duration-300"
-        :class="showDrawerMusic ? 'opacity-100 scale-100' : 'opacity-0 scale-75'"
-      >
-        <icon-mdi:chevron-down
-          class="text-white text-xl drop-shadow-lg transition-transform duration-500"
-          :class="{ 'rotate-180': showDrawerMusic }"
-        />
-      </div>
     </div>
-    <div class="flex-1 min-w-0">
+    <div>
       <div
-        class="text-base text-primary-foreground line-clamp-1 mb-0.5 mx-2 transition-all duration-300"
-        :class="{ 'text-lg font-semibold': showDrawerMusic }"
+        class="text-base text-primary-foreground line-clamp-1 mb-0.5 mx-2"
         :title="currentTrack.title"
       >
         {{ currentTrack.title }}
